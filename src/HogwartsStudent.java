@@ -1,0 +1,46 @@
+public abstract class HogwartsStudent {
+    private final String name;
+    private final int magicPower;
+    private final int transgressionDistance;
+
+    public HogwartsStudent(String name, int magicPower, int transgressionDistance) {
+        this.name = name;
+        this.magicPower = magicPower;
+        this.transgressionDistance = transgressionDistance;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMagicPower() {
+        return magicPower;
+    }
+
+    public int getTransgressionDistance() {
+        return transgressionDistance;
+    }
+
+    private int getTotalPower() {
+        return magicPower + transgressionDistance;
+    }
+
+    public void compareTo(HogwartsStudent other) {
+        if (other.getTotalPower() < this.getTotalPower()) {
+            System.out.println(this.getName() + " Сильнее чем " + other.getName());
+        } else if (other.getTotalPower() > this.getTotalPower()) {
+            System.out.println(other.getName() + " Сильнее чем " + this.getName());
+        } else {
+            System.out.println("Ученики равны по силе" );
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "HogwartsStudent{" +
+                "name='" + name + '\'' +
+                ", magicPower=" + magicPower +
+                ", transgressionDistance=" + transgressionDistance +
+                '}';
+    }
+}
